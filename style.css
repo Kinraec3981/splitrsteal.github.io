@@ -1,0 +1,85 @@
+.title{
+	text-align: center;
+	font-family: 'Bangers', cursive;
+	font-size: 50px;
+	color: pink;
+}*{
+	padding: 0;
+	margin: 0;
+}.heading{
+	background: black;
+	height: 200px;
+	display: grid;
+	place-items: center;
+	padding-top: 0px;
+
+}body{
+	background: linear-gradient(45deg, cyan, lime);
+}.split{
+	width: 100%;
+	height: 150px;
+	background: lime;
+	font-family: 'Bangers', cursive;
+	font-size: 40px;
+	transition: 0.5s;
+	border: black 2px solid;
+	border-radius: 20px;
+}.steal{
+	width: 100%;
+	height: 150px;
+	font-family: 'Bangers', cursive;
+	background: #D21404;
+	font-size: 40px;
+	transition: 0.5s;
+	border:black 2px solid;
+	border-radius: 20px;
+
+}.steal:hover{
+	color: purple;
+	font-size: 50px;
+	background: #E31404;
+	border-radius: 40px;
+}.split:hover{
+	color: purple;
+	font-size: 50px;
+	background: #00ff00;
+	border-radius: 40px;
+
+}.money{
+	text-align: center;
+	font-family: 'Bangers', cursive;
+	padding: 30px;
+	background: purple;
+	border-radius: 40px;
+	margin: 40px;
+
+}.input{
+	text-align: center;
+	border: none;
+	background: pink;
+	height: 50px;
+	width: 200px;
+	color: purple;
+	font-size: 40px;
+	font-family: 'Bangers', cursive;
+	width: 500px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	padding: 10px;
+}.bot{
+	text-align: center;
+
+}.comp{
+	text-align: center;
+	font-size: 40px;
+	font-family: 'Bangers', cursive;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}.cash, .answer{
+	color: blue;
+	font-size: 40px;
+}

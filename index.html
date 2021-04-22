@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Split or Steal</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="heading">
+	<h1 class="title">Split or Steal?</h1>
+	
+	</div>
+	
+	<div class="bot">
+		<h1 class="money">Your Money: <span class="cash">30</span></h1>
+	<input type="text" class="input" placeholder="input money to gamble">
+	</div>
+	<div class="buttons">
+	<button class="split">Split</button><br>
+	
+	<button class="steal">Steal</button>
+	<h1 class="comp">Computer: <span class="answer"></span></h1>
+	</div>
+
+</body>
+<script>
+  
+$(document).ready(function(){
+	
+
+  $(".split").click(function(){
+  	$(".answer").fadeOut(1000);
+  	$(".cash").fadeOut(1000);
+    var myArray = ["split", "steal"];
+	var chosen = myArray[Math.floor(Math.random()*myArray.length)];
+
+	if(chosen == "split" && $.isNumeric($(".input").val()) == true && $(".input").val() != 0){
+		console.log("split");
+		var x = Number($(".input").val()) + Number($(".cash").html());		
+		$(".cash").html(x);
+		$(".input").val("0");
+		$(".answer").html(chosen);
+		$(".answer").fadeIn(1000);
+		$(".cash").fadeIn(1000);
+		if($(".cash").html() <= 0){
+		$(".money").html("You Lost :(, restart page for new game.")
+		}if($(".cash").html() >= 60){
+		$(".money").html("You Won :), restart page for new game.")
+		}
+	}if(chosen == "steal" && $.isNumeric($(".input").val()) == true && $(".input").val() != 0){
+		var y = $(".cash").html() - $(".input").val();
+		console.log("steal");
+		$(".cash").html(y);
+		$(".input").val("0");
+		$(".answer").html(chosen);
+  		$(".answer").fadeIn(1000);
+		$(".cash").fadeIn(1000);
+		if($(".cash").html() <= 0){
+			$(".money").html("You Lost :(, restart page for new game.")
+		}if($(".cash").html() >= 60){
+			$(".money").html("You Won :), restart page for new game.")
+		}
+
+	}
+  });
+  $(".steal").click(function(){
+  	$(".cash").fadeOut(1000);
+  	$(".answer").fadeOut(1000);
+    var myArray = ["split", "steal"];
+	var chosen = myArray[Math.floor(Math.random()*myArray.length)];
+	if(chosen == "split" && $.isNumeric($(".input").val()) && $(".input").val() != 0){
+		console.log("split");
+		var x = Number($(".input").val()) * 2 + Number($(".cash").html());		
+		$(".cash").html(x);
+		$(".input").val("0");
+		$(".answer").fadeIn(1000);
+		$(".cash").fadeIn(1000);
+		if($(".cash").html() <= 0){
+			$(".money").html("You Lost :(, restart page for new game.")
+		}if($(".cash").html() >= 60){
+			$(".money").html("You Won :), restart page for new game.")
+		}
+
+	}if(chosen == "steal" && $.isNumeric($(".input").val()) && $(".input").val() != 0){
+		var y = $(".cash").html() - $(".input").val();
+		console.log("steal");
+		$(".cash").html(y);
+		$(".input").val("0");
+		$(".answer").fadeIn(1000);
+		$(".cash").fadeIn(1000);
+		if($(".cash").html() <= 0){
+			$(".money").html("You Lost :(, restart page for new game.")
+		}if($(".cash").html() >= 60){
+			$(".money").html("You Won :), restart page for new game.")
+		}
+	}
+  });
+  
+  
+  
+});
+</script>
+</html>
